@@ -59,5 +59,8 @@
     <Image Include="res\Console.ico">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="res\logo.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

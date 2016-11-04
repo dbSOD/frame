@@ -3,7 +3,9 @@
 
 #include "stdafx.h"
 #include "TestDll.h"
-
+#include "TestDlg.h"
+#include <thread>
+#include <memory>
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -59,5 +61,28 @@ BOOL CTestDllApp::InitInstance()
 {
 	CWinApp::InitInstance();
 
-	return TRUE;
+	return init();
+}
+
+bool CTestDllApp::init()
+{
+	//自定义初始化函数
+	//这种注入方式，线程会随着this dll卸载退出线程！
+	std::thread th(&threadFunc);
+	th.detach();
+	CloseHandle(::CreateThread(NULL, NULL, LPTHREAD_START_ROUTINE(threadFunc), NULL, NULL, NULL));
+	return true;
+}
+
+//线程函数，用来创建函数窗口
+void threadFunc()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	HINSTANCE hOldRes = AfxGetResourceHandle();
+	AfxSetResourceHandle(theApp.m_hInstance);
+	std::shared_ptr<CTestDlg> pDlg(new CTestDlg); 
+	pDlg->DoModal();
+	FreeLibraryAndExitThread(theApp.m_hInstance, 1);
+	AfxSetResourceHandle(hOldRes);
+	return;
 }

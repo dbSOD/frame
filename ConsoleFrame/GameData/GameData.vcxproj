@@ -47,6 +47,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -75,11 +76,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h" />
+    <ClInclude Include="baseaddr.h" />
+    <ClInclude Include="datastruct.h" />
+    <ClInclude Include="monster.h" />
     <ClInclude Include="role.h" />
+    <ClInclude Include="skill.h" />
+    <ClInclude Include="task.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp" />
+    <ClCompile Include="datastruct.cpp" />
+    <ClCompile Include="monster.cpp" />
     <ClCompile Include="role.cpp" />
+    <ClCompile Include="skill.cpp" />
+    <ClCompile Include="task.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

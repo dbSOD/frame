@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\Console.ico" />
+    <Image Include="res\logo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

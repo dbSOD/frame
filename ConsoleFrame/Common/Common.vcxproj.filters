@@ -24,9 +24,27 @@
     <ClInclude Include="utils.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="shareMemoryCli.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="shareMemorySer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMstruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="shareMemoryCli.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="shareMemorySer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SMstruct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

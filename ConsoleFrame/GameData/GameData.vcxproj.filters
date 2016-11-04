@@ -24,12 +24,39 @@
     <ClInclude Include="role.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="skill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="datastruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="baseaddr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="role.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="monster.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="skill.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="task.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="datastruct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

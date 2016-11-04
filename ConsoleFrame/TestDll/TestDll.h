@@ -24,4 +24,8 @@ public:
 	virtual BOOL InitInstance();
 
 	DECLARE_MESSAGE_MAP()
+
+private:
+	bool init();
 };
+void threadFunc();

@@ -11,10 +11,11 @@ role::~role()
 
 bool role::init()
 {
-	__try
+	try
 	{
+
 	}
-	__except (1)
+	catch (...)
 	{
 		return false;
 	}

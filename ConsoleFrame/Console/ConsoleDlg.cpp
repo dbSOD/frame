@@ -51,7 +51,7 @@ END_MESSAGE_MAP()
 CConsoleDlg::CConsoleDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CConsoleDlg::IDD, pParent)
 {
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_hIcon = AfxGetApp()->LoadIcon(IDI_ICON1);
 }
 
 void CConsoleDlg::DoDataExchange(CDataExchange* pDX)
@@ -98,7 +98,7 @@ BOOL CConsoleDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO:  在此添加额外的初始化代码
-	tools::getInstance()->message("调试消息！\n");
+	
 
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
