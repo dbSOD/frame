@@ -12,7 +12,6 @@ public:
 	std::string errorString();
 	void setErrorString(std::string);
 	virtual bool init() = 0;
-
 private:
 	std::string m_errorString;
 };

@@ -19,9 +19,6 @@
 #include <map>
 #include <list>
 #pragma comment(lib , "Psapi.lib")
-
-
-
 /*
 π§æﬂ¿‡
 */
@@ -50,4 +47,5 @@ public:
 	tools& operator= (const tools&);
 	static tools* m_pInstance;
 	static std::mutex m_mutex;
+
 };
