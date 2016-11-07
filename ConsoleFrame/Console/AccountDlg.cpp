@@ -35,6 +35,7 @@ void CAccountDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CAccountDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CAccountDlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CAccountDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CAccountDlg::OnBnClickedButton3)
 END_MESSAGE_MAP()
 
 
@@ -128,7 +129,7 @@ void CAccountDlg::threadCallBack()
 	while (true)
 	{
 		updateDate();
-		TRACE("111\n");
+		//TRACE("111\n");
 		Sleep(1000);
 	}
 }
@@ -138,5 +139,13 @@ void CAccountDlg::OnBnClickedButton2()
 {
 	// TODO:  删除账号，是删除复选框选中的账号信息
 
+
+
+}
+
+
+void CAccountDlg::OnBnClickedButton3()
+{
+	// TODO:  开始脚本
 
 }
