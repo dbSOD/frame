@@ -104,6 +104,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccountDlg.h" />
+    <ClInclude Include="ConfigDlg.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="ConsoleDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -111,6 +113,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AccountDlg.cpp" />
+    <ClCompile Include="ConfigDlg.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="ConsoleDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -128,7 +132,17 @@
     <Image Include="res\Console.ico" />
     <Image Include="res\logo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{a4a68adf-6355-485c-9563-56049dad2af5}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Console.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

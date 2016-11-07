@@ -13,8 +13,11 @@ public:
 
 	bool createShareMemory();
 	void destoryShareMemory();
-
-private:
+	//查找pid\用户名为空为空的内存块
+	int findPidEmptyIndex();
+	//清空某一块内存
+	void clearMemOfIndex(int index);
+public:
 	_SM_ALL_SHARE_DATA *m_pSMAllData;
 };
 

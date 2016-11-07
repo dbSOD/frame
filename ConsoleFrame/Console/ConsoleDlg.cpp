@@ -50,19 +50,23 @@ END_MESSAGE_MAP()
 
 CConsoleDlg::CConsoleDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CConsoleDlg::IDD, pParent)
+	, m_curSelTab(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDI_ICON1);
+	
 }
 
 void CConsoleDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_TAB1, m_tabCtl);
 }
 
 BEGIN_MESSAGE_MAP(CConsoleDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &CConsoleDlg::OnTcnSelchangeTab1)
 END_MESSAGE_MAP()
 
 
@@ -98,7 +102,11 @@ BOOL CConsoleDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO:  在此添加额外的初始化代码
-	
+	//初始化表单配置
+	if (!initDlg())
+	{
+		return FALSE;
+	}
 
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
@@ -152,4 +160,54 @@ HCURSOR CConsoleDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
+
+
+
+void CConsoleDlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	int sel = m_tabCtl.GetCurSel();
+	for (int i = 0; i < m_tabCtl.GetItemCount(); i++)
+	{
+		m_pDialog[i]->ShowWindow(i == sel ? SW_SHOW : SW_HIDE);
+	}
+
+	*pResult = 0;
+}
+
+bool CConsoleDlg::initDlg()
+{
+	//为tab添加两个页面
+	m_tabCtl.InsertItem(0, "账号");
+	m_tabCtl.InsertItem(1, "配置");
+
+	SetWindowText("游戏控制台框架：QQ424002200");
+
+	//创建两个对话框
+	m_accountDlg.Create(IDD_DLGACCOUNT , &m_tabCtl);
+	m_configDlg.Create(IDD_DLGCONFIG, &m_tabCtl);
+	m_accountDlg.SetParent(&m_tabCtl);
+	m_configDlg.SetParent(&m_tabCtl);
+	//设定在tab内的显示范围
+	CRect rc;
+	m_tabCtl.GetClientRect(rc);
+	rc.top += 20;
+	rc.bottom -= 0;
+	rc.left += 0;
+	rc.right -= 0;
+	m_accountDlg.MoveWindow(&rc);
+	m_configDlg.MoveWindow(&rc);
+
+	//保存对话框的指针
+	m_pDialog[0] = &m_accountDlg;
+	m_pDialog[1] = &m_configDlg;
+	
+	m_curSelTab = 0;
+
+	m_pDialog[0]->ShowWindow(SW_SHOW);
+	m_pDialog[1]->ShowWindow(SW_HIDE);
+
+	return true;
+}
+
 

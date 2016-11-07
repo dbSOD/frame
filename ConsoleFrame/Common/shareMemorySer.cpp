@@ -9,6 +9,7 @@ shareMemorySer::shareMemorySer(int num)
 
 shareMemorySer::~shareMemorySer()
 {
+	destoryShareMemory();
 }
 
 /*
@@ -41,5 +42,28 @@ void shareMemorySer::destoryShareMemory()
 	{
 		UnmapViewOfFile(m_pSMAllData);
 		m_pSMAllData = nullptr;
+	}
+}
+
+int shareMemorySer::findPidEmptyIndex()
+{
+	for (int i = 0; i < MORE_OPEN_NUMBER; i++)
+	{
+		if (m_pSMAllData->m_sm_data[i].userName.empty())
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+void shareMemorySer::clearMemOfIndex(int index)
+{
+	for (int i = 0; i != MORE_OPEN_NUMBER; i++)
+	{
+		if (i == index)
+		{
+			memset(&m_pSMAllData->m_sm_data[i], 0, sizeof(SM_SHARE_DATA));
+		}
 	}
 }
