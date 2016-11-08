@@ -25,7 +25,8 @@ bool shareMemorySer::createShareMemory()
 		return false;
 	}
 	//将这个指针指向创建的共享内存
-	m_pSMAllData = (_SM_ALL_SHARE_DATA *)MapViewOfFile(hMapFile, FILE_MAP_WRITE | FILE_MAP_READ, 0, 0, 0);
+	m_pSMAllData = (_SM_ALL_SHARE_DATA *)MapViewOfFile(hMapFile, FILE_MAP_WRITE | FILE_MAP_READ, 0, 0, 0); 
+	memset(m_pSMAllData, 0, sizeof(_SM_ALL_SHARE_DATA));
 	if (!m_pSMAllData)
 	{
 		return false;

@@ -7,7 +7,10 @@
 #include "afxdialogex.h"
 #include <sstream>
 #include <thread>
+#include <windows.h>
+#include "exeLoad.h"
 // CAccountDlg 对话框
+
 
 IMPLEMENT_DYNAMIC(CAccountDlg, CDialogEx)
 
@@ -148,4 +151,9 @@ void CAccountDlg::OnBnClickedButton3()
 {
 	// TODO:  开始脚本
 
+	for (int i = 0; i < MORE_OPEN_NUMBER; i++)
+	{
+		exeLoad e("shareMemTest.exe");
+	}
+	
 }

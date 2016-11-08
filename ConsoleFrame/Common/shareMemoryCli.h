@@ -13,8 +13,9 @@ public:
 
 	bool openShareMemory();
 	void destoryShareMemory();
+	int getPidEmptyIndex();
 
-private:
+public:
 	_SM_ALL_SHARE_DATA *m_pSMAllData;
 };
 

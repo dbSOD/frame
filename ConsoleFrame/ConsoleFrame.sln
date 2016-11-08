@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d3d8Inject", "d3d8Inject\d3
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcxproj", "{A4A68ADF-6355-485C-9563-56049DAD2AF5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shareMemTest", "shareMemTest\shareMemTest.vcxproj", "{6A1A166A-E1EB-49FB-8DF5-F9D9D20D6CE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -45,6 +47,10 @@ Global
 		{A4A68ADF-6355-485C-9563-56049DAD2AF5}.Debug|Win32.Build.0 = Debug|Win32
 		{A4A68ADF-6355-485C-9563-56049DAD2AF5}.Release|Win32.ActiveCfg = Release|Win32
 		{A4A68ADF-6355-485C-9563-56049DAD2AF5}.Release|Win32.Build.0 = Release|Win32
+		{6A1A166A-E1EB-49FB-8DF5-F9D9D20D6CE4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A1A166A-E1EB-49FB-8DF5-F9D9D20D6CE4}.Debug|Win32.Build.0 = Debug|Win32
+		{6A1A166A-E1EB-49FB-8DF5-F9D9D20D6CE4}.Release|Win32.ActiveCfg = Release|Win32
+		{6A1A166A-E1EB-49FB-8DF5-F9D9D20D6CE4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

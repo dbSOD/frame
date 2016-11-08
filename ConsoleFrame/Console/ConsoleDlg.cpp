@@ -108,6 +108,17 @@ BOOL CConsoleDlg::OnInitDialog()
 		return FALSE;
 	}
 
+	//防止控制台多开
+
+
+		HANDLE hMutex = CreateMutex(NULL, FALSE, _T("ArwenApp"));
+		if (GetLastError() == ERROR_ALREADY_EXISTS){ //如果已经存在同名的Mutex会得到这个错误.
+			CloseHandle(hMutex);
+			AfxMessageBox("请勿重复打开窗口！");
+			//退出窗口
+			exit(1);
+		}
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

@@ -51,3 +51,17 @@ void shareMemoryCli::destoryShareMemory()
 		m_pSMAllData = nullptr;
 	}
 }
+
+int shareMemoryCli::getPidEmptyIndex()
+{
+	for (int i = 0; i < MORE_OPEN_NUMBER; i++)
+	{
+		if (m_pSMAllData->m_sm_data[i].ndPid == 0)
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
+

@@ -18,39 +18,18 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StringCovert.h">
+    <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="shareMemoryCli.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="shareMemorySer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SMstruct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="exeLoad.h">
+    <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="utils.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="shareMemoryCli.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="shareMemorySer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SMstruct.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="exeLoad.cpp">
+    <ClCompile Include="shareMemTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
