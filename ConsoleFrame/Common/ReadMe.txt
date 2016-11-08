@@ -3,14 +3,16 @@
 ========================================================================
 
 //工具类
-utils.h
-utils.cpp
+utils
 
 //字符转换库
-StringConvert.h
-
+StringConvert
 
 //共享内存
+shareMemoryCli
+shareMemorySer
 
+//外部加载exe
+exeLoad
 
 //APIHOOK

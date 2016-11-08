@@ -18,4 +18,5 @@ exeLoad::exeLoad(std::string filename)
 
 exeLoad::~exeLoad()
 {
+
 }

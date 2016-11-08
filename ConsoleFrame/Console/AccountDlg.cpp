@@ -150,9 +150,10 @@ void CAccountDlg::OnBnClickedButton2()
 void CAccountDlg::OnBnClickedButton3()
 {
 	// TODO:  开始脚本
-
+	//正常情况下，会判断当前复选框是否被选中，只登陆选中的
 	for (int i = 0; i < MORE_OPEN_NUMBER; i++)
 	{
+
 		exeLoad e("shareMemTest.exe");
 	}
 	
